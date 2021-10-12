@@ -1,0 +1,22 @@
+{"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "data": {"url": "https://raw.githubusercontent.com/jess11111/FIT3174/main/priceavg.csv"},
+  "title": "Average Property Price",
+"width": 350, "height": 450,
+  "params": [{
+    "name": "Select", 
+    "select": {"type": "point", "fields": ["Priceavg"]},
+    "bind": {
+      "Priceavg": {"input": "range", "min": 100,"max": 1600000,"step": 1000}
+    }
+  }],
+  "mark": "bar",
+  "encoding": {
+    "x": {"field": "Priceavg", "type": "quantitative"},
+    "y": {"field": "Council", "type": "nominal", "sort": "-x"},
+    "size": {
+      "condition": {"param": "Select", "value": 20},
+      "value": 1
+    }
+  }
+}

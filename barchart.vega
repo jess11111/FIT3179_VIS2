@@ -1,0 +1,15 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": { "text": "Melbourne Council Average Property Prices" },
+    "data": {
+    "url": "https://raw.githubusercontent.com/jess11111/FIT3174/main/priceavg.csv"
+    }
+  , 
+    "mark": "bar",
+    "encoding": {
+    "y": { "field": "Council", "type": "nominal", "sort": "-x" },
+    "x": { "field": "Priceavg", "type": "quantitative"},
+    "color": {"field": "Colours","type": "nominal","scale": null}
+    }
+}
+   
