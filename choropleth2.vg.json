@@ -1,8 +1,40 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 460,
-  "height": 430,
-  "projection": {"type": "equirectangular"},
+  "height": 410,
+  "title": {"text": "Affordable vs Costly", "fontSize":18, "color": "#051750"  },
+  
+  "projection": {"type": "equirectangular",
+    "center": {"expr": "center_to"},
+    "scale": {"expr": "zoom_level"}},
+    
+    "params": [
+      {
+        "name": "zoom_level",
+        "value": 44000,
+        "bind": {
+          "input": "range",
+          "min": 28000,
+          "max": 110000,
+          "step": 100,
+          "name": "Zoom: "
+        }
+      },
+      {
+        "name": "center_to",
+        "value": [145.035, -37.850],
+        "bind": {
+          "input": "select",
+          "options": [
+            [145.035, -37.850],
+            [145.000, -37.880]
+          ],
+          "labels": ["Melbourne CBD", "Toorak & St Kilda"],
+          "name": "Map Centre: "
+        }
+      }
+    ],
+
   "data": {
   "url": "https://raw.githubusercontent.com/jess11111/FIT3174/main/features%20(3)%20(1)%20(3).topojson",
   "format": {"type": "topojson", "feature": "features"}
@@ -23,9 +55,10 @@
   "encoding": {
   "color": {
   "field": "Priceperbedroom",
-  "title": "$ per room",
+  "title": "Price per room",
   "type": "quantitative",
-  "legend": {"orient": "none","direction": "horizontal","padding":-5,"legendX":22,"legendY":343,"gradientLength":800},
+  "legend": {"orient": "none","direction": "horizontal","padding":-5,"legendX":22,"legendY":343
+    ,"gradientLength":800, "format":"$,.3s"},
   "scale": {
   "type": "threshold",
   "domain": [250000, 400000, 500000, 700000],
@@ -33,8 +66,8 @@
   }
   },
   "tooltip": [
-    {"field": "Priceperbedroom", "type": "quantitative", "title": "Priceperbedroom"},
-    {"title": "Suburb", "field": "properties.vic_loca_2", "type": "nominal"}
+    {"title": "Suburb", "field": "properties.vic_loca_2", "type": "nominal"},
+    {"field": "Priceperbedroom", "type": "quantitative", "title": "Price per bedroom", "format":"$,.3s"}
   ]
   }
  }

@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
     "data": {"url": "https://raw.githubusercontent.com/jess11111/FIT3174/main/ref%20(version%201).csv"},
-    "title": "Average Property Price ($)",
+    "title": {"text": "Average Price", "fontSize":18, "color": "#051750" },
     "width": 360, "height": 450,
     "resolve": {"scale": {"color": "independent"}},
     "layer": [
@@ -44,7 +44,8 @@
         "encoding": {
           "x": {"aggregate": "mean", "field": "Price", "type": "quantitative", "stack": "normalize"},
           "y": {"field": "CouncilArea", "type": "nominal", "axis":null, 
-          "sort": ["Darebin City Council", 
+          "sort": ["Boroondara City Council", 
+            "Darebin City Council", 
           "Moreland City Council", 
           "Glen Eira City Council",
           "Moonee Valley City Council",
@@ -62,7 +63,7 @@
           "Maroondah City Council",
           "Knox City Council"]},
           "color": {"field": "site", "type": "nominal", "scale": {"range": ["white"]}, "legend": null},
-          "text": {"aggregate": "mean", "field": "Price", "type": "quantitative", "format": ".1f"}
+          "text": {"aggregate": "mean", "field": "Price", "type": "quantitative","format":"$,.2s"}
           }
       }
     ]

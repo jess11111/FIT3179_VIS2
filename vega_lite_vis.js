@@ -58,7 +58,12 @@ vegaEmbed("#bubble2", vg_12).then(function(result) {
  // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
 }).catch(console.error);
 
-var vg_13 = "propsymbolmap2.vega";
+var vg_13 = "propsymbolmap3.vega";
 vegaEmbed("#map5", vg_13).then(function(result) {
+ // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+}).catch(console.error);
+
+var vg_14 = "stackedbarchart3.vega";
+vegaEmbed("#stackedbar3", vg_14).then(function(result) {
  // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
 }).catch(console.error);

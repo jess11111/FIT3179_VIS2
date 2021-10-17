@@ -1,7 +1,8 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 489,
+    "width": 490,
     "height": 400,
+    "title": "Golden Land-Building Ratio",
     "projection": {"type": "mercator",
   "center": [145.020, -37.835],
   "scale": 52500},

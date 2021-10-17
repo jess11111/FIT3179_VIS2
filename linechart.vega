@@ -1,14 +1,15 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 350,
+    "width": 420,
     "height": 220,
+    "title": {"text": "Monthly Price Trend", "fontSize":18, "color": "#051750" },
     "description": "Average Sale Prices (2016-2018) Based on House Type.",
     "data": {"url": "https://raw.githubusercontent.com/jess11111/FIT3174/main/linechartdata.csv"},
     "mark": "line",
     "encoding": {
       "x": {"field": "Month", "type": "nominal", "sort": ["January", "February", "March","April", "May", "June","July", "September", "November","December"]
         , "title":""},
-      "y": {"field": "Avgmonthprice", "type": "quantitative" , "title":"Avg $"},
+      "y": {"field": "Avgmonthprice", "type": "quantitative",  "title":""},
 
       "tooltip": [
         {"field": "Avgmonthprice", "type": "quantitative", "title": "Average Price"},
@@ -22,7 +23,7 @@
       {
         "mark": {"type": "text", "align": "centre", "dx": -10, "dy":4, "baseline":"top"},
         "encoding": {
-          "text": {"field": "Avgmonthprice", "type": "quantitative"},
+          "text": {"field": "Avgmonthprice", "type": "quantitative","format":"$,.2s"},
           
           "opacity": {
             "condition": {

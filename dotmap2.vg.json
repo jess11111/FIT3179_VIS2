@@ -1,7 +1,8 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 550,
-    "height": 400,
+    "title": {"text": "Old vs New", "fontSize":18, "color": "#051750"  },
+    "width": 490,
+    "height": 430,
     "projection": {"type": "mercator",
   "center": [145.020, -37.835],
   "scale": 51000},
@@ -27,7 +28,7 @@
     "type": "quantitative",
     "scale": {"domain": [1, 10]}
     },
-    "size": {"value": 7},
+    "size": {"value": 10},
     "color": {
     "field": "Buildingage",
     "title": "Building Age (Years)",
@@ -37,13 +38,15 @@
  "domain": [20, 60, 100],
  "range": ["#ffffcc", "#a1dab4", "#41b6c4", "#225ea8"]
  }
+ ,"legend": {"orient": "none","direction": "horizontal","padding":-12,"legendX":22,"legendY":348}
+
     },
     "tooltip": [
-        {"field": "Buildingage", "type": "quantitative", "title": "Building age"},
+      {"field": "YearBuilt", "type": "quantitative", "title": "Year Built"},
+        {"field": "Buildingage", "type": "quantitative", "title": "Building Age"},
         {"title": "Suburb", "field": "Suburb", "type": "nominal"},
         {"title": "Council", "field": "CouncilArea", "type": "nominal"},
-        {"title": "Longitude", "field": "Longtitude", "type": "quantitative"},
-        {"title": "Latitude", "field": "Lattitude", "type": "quantitative"}
+        {"title": "Region", "field": "Regionname", "type": "nominal"}
     ]
     }
     }
